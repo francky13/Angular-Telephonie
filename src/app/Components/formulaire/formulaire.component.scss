@@ -1,24 +1,7 @@
-
-mat-card{
-    width:100%;
-  }
-
-  mat-card-header{
-    text-align: center;
-    color: #54c1c1;
-    margin-left: 25%;
-  }
-
-  mat-card-content{
-    position: relative;
-    margin-top: 5%;
-    text-align: center;
-  }
-
   .input{
-    margin-top: 7%;
-    width:80%;
-    height: 60px;
+    margin-bottom: 4px;
+    width:20%;
+    height: 50px;
     border-radius: 10px;
     border:1px;
     box-shadow: 1px 8px 8px 0px rgba(0 ,0 ,0 ,0.08);
@@ -30,9 +13,9 @@ mat-card{
     }
 
   #but{
-    width:75%;
-    margin-top: 7%;
-    height: 45px;
+    width:75px;
+    margin-top: 7px;
+    height: 40px;
     border: solid 2px #54c1c1;
     background-color: #fff;
     color:#54c1c1;
