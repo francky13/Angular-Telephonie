@@ -1,32 +1,56 @@
-<form [formGroup]="mandoForm" (ngSubmit)="onFormSubmit()" class="form-group">
-  <h1>insertion nouveaux offres</h1>
+<form [formGroup]="forfaitForm" (ngSubmit)="onFormSubmit()" class="form-group">
+  <h1>Saisir un nouvel Offre</h1>
+
   <div class="row" >
-    Type d'offre : <select formControlName="type" class="form-control" class="input"(change)="changeState($event)">
-      <option disabled>Select Type</option>
+    Type de l'offre : <select formControlName="typeForfait" class="form-control" class="input" (change)="changeState($event)">
+      <option selected value="">Choisissez le type</option>
       <option *ngFor="let types of listeType">{{types}} </option>
     </select>
   </div>
+
   <div class="row">
-    Nom : <input class="input" formControlName="name" placeholder="Enter Name">
+
+    <label for="nom"> Nom de l'offre : </label>
+    <input class="input" formControlName="nomForfait" placeholder="Ex : (Offre milay)">
   </div>
-  <div>
-    Mode : <select formControlName="mode" class="form-control"  class="input" placeholder="Choose Mode">
+
+  <div class="row">
+    <label for="nom"> Prix de l'offre : </label>
+    <input class="input" formControlName="prixForfait" type="number" placeholder="En Ariary">
+  </div>
+
+  <div class="row">
+    <label for="duree"> Duree : </label>
+  <input class="input" formControlName="dureeForfait" type="number" placeholder="En jours">
+  </div>
+
+  <div class="row">
+    <label for="valeurAppel"> Valeur d'appel </label>
+    <input class="input" formControlName="valeurAppel" placeholder="En minutes ou Ariary">
+  </div>
+
+  <div class="row">
+    <label for="modeAppel"> Mode d'Appel : </label>
+     <select formControlName="modeAppel" class="form-control"  class="input" placeholder="Choisissez le Mode de tarif d'appel">
+      <option selected value="">Choisissez le mode</option>
       <option *ngFor="let mode of listeMode">{{mode}}</option>
     </select>
   </div>
-  <div class="row">
-    Prix : <input class="input" formControlName="prix" placeholder="Prix">
-  </div>
-  <div class="row">
-    duree : <input class="input" formControlName="duree" placeholder="duree">
-  </div>
-  <h1>details des offres</h1>
-  <div class="row">
-    Nom : <input class="input" formControlName="name" placeholder="Enter Name">
-  </div>
-  </form>
 
   <div class="row">
-    <a routerLink="/offer"><button id="but">Insert new detail</button></a>
+    <label for="nom"> Volume mega : </label>
+    <input class="input" formControlName="volumeMega" type="number" placeholder="Volume de Mo">
   </div>
+
+  <div class="row">
+    <label for="nom"> Nombre de message : </label>
+    <input class="input" formControlName="nbSms" type="number" placeholder="Entrer le nombre de message">
+  </div>
+
+  <div class="row">
+    <button id="but" type="submit">Valider</button>
+  </div>
+
+  </form>
+
 
