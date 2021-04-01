@@ -1,0 +1,43 @@
+h1{
+  text-align: center;
+  color: #070222;
+}
+
+#users{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width:100%;
+}
+
+#users td, #users th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  width:14%;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#070222;
+  color:#f3b302;
+}
+
+#but {
+  background-color: #070222;
+  color: white;
+  border: 1px solid #070222;
+  width: 50%;
+  font-size: 18px;
+  border-radius: 50px;
+}
+
+#but2 {
+  background-color:#06fdbf86;
+  color: #f3b302;
+  width: 50%;
+  font-size: 18px;
+  border-radius: 50px;
+}

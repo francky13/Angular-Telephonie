@@ -1,0 +1,32 @@
+<div class="deposit">
+  <h1>Liste des Offres</h1>
+
+  <table id="users">
+    <thead>
+      <th scope="col">nom </th>
+      <th scope="col">idForfait</th>
+      <th scope="col">nombre de sms </th>
+      <th scope="col">Mega</th>
+      <th scope="col">duree</th>
+      <th scope="col">Prix</th>
+
+    </thead>
+
+
+<tbody>
+  <tr *ngFor="let item of result">
+
+    <td>{{item.nom}}</td>
+    <td>{{item.idForfait}}</td>
+    <td>{{item.nbSms}}</td>
+    <td>{{item.volumeMega}}</td>
+    <td>{{item.duree}} jour</td>
+    <td>{{item.valeurOffre}}</td>
+
+
+  </tr>
+</tbody>
+
+  </table>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="deposit">
+  <h1>The list of deposits to validate</h1>
+
+<table id="users">
+  <thead>
+  <th scope="col">Id </th>
+  <th scope="col">idUtilisateur</th>
+  <th scope="col">montant</th>
+  <th scope="col">dateDepot</th>
+  <th scope="col">Confirmation depot</th>
+  </thead>
+
+<tbody>
+  <tr *ngFor="let item of result">
+
+    <td>{{item.idDepot}}</td>
+    <td>{{item.idUtilisateur}}</td>
+    <td>{{item.montant}}</td>
+    <td>{{item.dateDepot}}</td>
+    <td class="left">
+        <button (click)="Confirm(item.idDepot)" id="but">valider</button>
+
+    </td>
+
+  </tr>
+  </tbody>
+
+
+</table>
+</div>

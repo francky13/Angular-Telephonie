@@ -1,0 +1,47 @@
+mat-toolbar{
+    background-color:#070222;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+
+}
+span{
+    color:#fffafa;
+}
+a{
+    color:#fffafa;
+}
+
+#but {
+     background-color: #070222 ;
+  color:#f3b302;
+  border: 2px solid #f3b302; /* Green */
+  transition-duration: 0.4s;
+  width: 10%;
+
+  }
+
+  #but:hover {
+  background-color: #f3b302; /* Green */
+  color: #070222;
+}
+
+.nela{
+    width:5%;
+}
+.link{
+    width: 80%;
+}
+.signout{
+    width: 5%;
+}
+
+#signoutbut{
+    background-color: #f3b302;
+    color: #000000;
+    border: 1px solid  #f3b302;
+    width: 150%;
+    font-size: 15px;
+}
+
