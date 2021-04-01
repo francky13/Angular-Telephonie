@@ -12,10 +12,10 @@ export class ForfaitService {
   listeForfait(){
     return this.http.get(`${url}forfait/listeForfait`);
   }
-   getInsertionForfait(Insetion) {
+   getInsertionForfait(Insertion) {
      const options = this.toolsServ.formOption();
-     const za = this.http.post(`${url}forfait/addForfait`, Insetion, options);
-     console.log(za);
+     const za = this.http.post(`${url}forfait/addForfait`, Insertion, options);
+     console.log(Insertion);
      return za;
   }
 }

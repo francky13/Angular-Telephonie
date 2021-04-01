@@ -11,11 +11,14 @@ import { ForfaitService } from 'src/app/service/forfait.service';
 export class FormulaireComponent implements OnInit {
 
  listeType = ['Appel', 'Sms', 'Internet', 'Full'];
- modeAppel = ['Ar', 'Min'];
+ modeAppel = ['Ar', 'Mn'];
  modeMega = ['Mo'];
  modeSms = ['SMS'];
  listeMode = this.modeAppel;
-
+result: any = '' ;
+  response: any = '';
+  message = '';
+  error_message = '';
 
 forfaitForm = new FormGroup({
     typeForfait: new FormControl('', Validators.required),
@@ -73,12 +76,27 @@ forfaitForm = new FormGroup({
   }
 
   onFormSubmit(): void {
-    // this.nom.disable();
-    console.log('FORFAIT :',this.forfaitForm.value);
+    console.log('FORFAIT :', this.forfaitForm.value);
+    this.insertForfait();
   }
   constructor(private ForfaitServices: ForfaitService) { }
 
   ngOnInit(): void {
+  }
+  insertForfait(){
+     const onSuccess = response => {
+       if (response.status === 200) {
+        this.message = 'Succes Confirmation';
+      } else {
+        this.error_message = 'Erreur Confirmation';
+      }
+    };
+
+     const onError = error => {
+     this.message = 'Erreur interne';
+    };
+     this.ForfaitServices.getInsertionForfait(this.forfaitForm.value).subscribe(onSuccess, onError);
+     alert('Succes Confirmation');
   }
 
   changeState(e) {
