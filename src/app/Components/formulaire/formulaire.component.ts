@@ -34,12 +34,6 @@ export class FormulaireComponent implements OnInit {
   message: string;
   error_message: string;
 
-
-consommationModel = {
-  valeurAppel: '',
-  valeurAUtre: ''
-};
-
   get appel(): any {
     return this.forfaitForm.get('valeurAppel');
   }
@@ -85,7 +79,6 @@ consommationModel = {
   }
 
   onFormSubmit(): void {
-<<<<<<< Updated upstream
     console.log('FORFAIT :', this.forfaitForm.value);
     this.insertForfait();
   }
@@ -93,11 +86,6 @@ consommationModel = {
   onConsoSubmit(): void {
     console.log('CONSO :',this.consoForm.value);
     this.insertConso();
-=======
-    // this.nom.disable();
-    console.log('FORFAIT :',this.forfaitForm.value);
-    console.log('CONSO :',this.consommationModel);
->>>>>>> Stashed changes
   }
   constructor(private ForfaitServices: ForfaitService) { }
 
@@ -115,6 +103,7 @@ consommationModel = {
      const onError = error => {
      this.message = 'Erreur interne';
     };
+     // tslint:disable-next-line: deprecation
      this.ForfaitServices.getInsertionForfait(this.forfaitForm.value).subscribe(onSuccess, onError);
      alert('Succes Confirmation');
   }
@@ -148,7 +137,8 @@ consommationModel = {
       case 'Internet':
         this.listeMode = this.modeMega;
         this.typeMega();
-        default :
+        // tslint:disable-next-line: no-switch-case-fall-through
+      default :
           this.listeMode = this.modeAppel;
           this.typeFull();
     }
