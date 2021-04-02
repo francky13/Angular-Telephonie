@@ -13,7 +13,11 @@ const routes: Routes = [
   {path: 'Offre', component : OffreComponent },
   {path: 'Statistique', component : StatistiqueComponent },
 
-
+{
+    path: '',
+    redirectTo: 'Liste',
+    pathMatch: 'full'
+  },
 
 
 ];

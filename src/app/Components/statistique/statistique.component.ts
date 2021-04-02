@@ -1,6 +1,7 @@
 
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { ForfaitService } from 'src/app/service/forfait.service';
 
 @Component({
   selector: 'app-statistique',
@@ -17,11 +18,24 @@ export class StatistiqueComponent implements AfterViewInit  {
   doughnutChart: any;
   lineChart: any;
 
+ result: any = '' ;
+  response: any = '';
 
+  constructor(private ForfaitServices: ForfaitService) { }
   ngAfterViewInit() {
     this.lineChartMethod();
+    this.Liste();
   }
 
+    Liste() {
+    this.ForfaitServices.statistic().subscribe(
+      (res) => {
+         const temps = res as any;
+         this.result = temps.data;
+         console.log(this.result);
+      }
+    );
+  }
 
 
   lineChartMethod() {
@@ -47,7 +61,7 @@ export class StatistiqueComponent implements AfterViewInit  {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40, 10, 5, 50, 10, 15],
+            data: this.result,
             spanGaps: false,
           }
         ]
@@ -56,3 +70,4 @@ export class StatistiqueComponent implements AfterViewInit  {
   }
 
 }
+
