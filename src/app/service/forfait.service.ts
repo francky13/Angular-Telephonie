@@ -18,4 +18,12 @@ export class ForfaitService {
      console.log(Insertion);
      return za;
   }
+
+  insertConso(Insertion) {
+    const options = this.toolsServ.formOption();
+    const za = this.http.post(`${url}forfait/addConsommation`, Insertion, options);
+    console.log(Insertion);
+    return za;
+ }
+
 }
