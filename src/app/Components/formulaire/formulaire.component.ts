@@ -35,6 +35,11 @@ export class FormulaireComponent implements OnInit {
   error_message: string;
 
 
+consommationModel = {
+  valeurAppel: '',
+  valeurAUtre: ''
+};
+
   get appel(): any {
     return this.forfaitForm.get('valeurAppel');
   }
@@ -80,6 +85,7 @@ export class FormulaireComponent implements OnInit {
   }
 
   onFormSubmit(): void {
+<<<<<<< Updated upstream
     console.log('FORFAIT :', this.forfaitForm.value);
     this.insertForfait();
   }
@@ -87,6 +93,11 @@ export class FormulaireComponent implements OnInit {
   onConsoSubmit(): void {
     console.log('CONSO :',this.consoForm.value);
     this.insertConso();
+=======
+    // this.nom.disable();
+    console.log('FORFAIT :',this.forfaitForm.value);
+    console.log('CONSO :',this.consommationModel);
+>>>>>>> Stashed changes
   }
   constructor(private ForfaitServices: ForfaitService) { }
 
