@@ -47,10 +47,29 @@
     <input class="input" formControlName="nbSms" type="number" placeholder="Entrer le nombre de message">
   </div>
 
+
   <div class="row">
-    <button id="but" type="submit">Valider</button>
+    <button id="but" type="submit" >Valider</button>
   </div>
 
-  </form>
+</form>
+
+<form [formGroup]="consoForm" (ngSubmit)="onConsoSubmit()" class="form-group">
+
+    <h1>Consommmation</h1>
+    <div class="row">
+      <label for="nom"> Appel : </label>
+      <input class="input" formControlName="valeurAppel" type="number" placeholder="Appel">
+    </div>
+
+    <div class="row">
+      <label for="nom"> Appel autre operateur: </label>
+      <input class="input" formControlName="valeurAutre" type="number" placeholder="Autre Operateur">
+    </div>
+    <div class="row">
+      <button id="but" type="submit">Valider</button>
+    </div>
+
+</form>
 
 
