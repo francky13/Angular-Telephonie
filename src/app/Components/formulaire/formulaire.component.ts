@@ -15,21 +15,30 @@ export class FormulaireComponent implements OnInit {
  modeMega = ['Mo'];
  modeSms = ['SMS'];
  listeMode = this.modeAppel;
+<<<<<<< Updated upstream
 result: any = '' ;
   response: any = '';
   message = '';
   error_message = '';
+=======
 
-forfaitForm = new FormGroup({
-    typeForfait: new FormControl('', Validators.required),
-    nomForfait: new FormControl('', Validators.required),
-    prixForfait: new FormControl('', Validators.required),
-    dureeForfait: new FormControl('', Validators.required),
-    valeurAppel: new FormControl('', Validators.required),
-    modeAppel: new FormControl('', Validators.required),
-    volumeMega: new FormControl('', Validators.required),
-    nbSms: new FormControl('', Validators.required)
+ forfaitForm = new FormGroup({
+   typeForfait: new FormControl('', Validators.required),
+   nomForfait: new FormControl('', Validators.required),
+   prixForfait: new FormControl('', Validators.required),
+   dureeForfait: new FormControl('', Validators.required),
+   valeurAppel: new FormControl('', Validators.required),
+   modeAppel: new FormControl('', Validators.required),
+   volumeMega: new FormControl('', Validators.required),
+   nbSms: new FormControl('', Validators.required)
   });
+>>>>>>> Stashed changes
+
+ consoForm = new FormGroup({
+    valeurAppel: new FormControl('', Validators.required),
+    valeurAutre: new FormControl('', Validators.required)
+  });
+
 
   get appel(): any {
     return this.forfaitForm.get('valeurAppel');
@@ -78,6 +87,10 @@ forfaitForm = new FormGroup({
   onFormSubmit(): void {
     console.log('FORFAIT :', this.forfaitForm.value);
     this.insertForfait();
+  }
+
+  onConsoSubmit(): void {
+    console.log('CONSO :',this.consoForm.value);
   }
   constructor(private ForfaitServices: ForfaitService) { }
 
