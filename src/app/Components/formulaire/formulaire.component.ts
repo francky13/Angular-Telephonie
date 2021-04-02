@@ -15,21 +15,25 @@ export class FormulaireComponent implements OnInit {
  modeMega = ['Mo'];
  modeSms = ['SMS'];
  listeMode = this.modeAppel;
-result: any = '' ;
-  response: any = '';
-  message = '';
-  error_message = '';
 
-forfaitForm = new FormGroup({
-    typeForfait: new FormControl('', Validators.required),
-    nomForfait: new FormControl('', Validators.required),
-    prixForfait: new FormControl('', Validators.required),
-    dureeForfait: new FormControl('', Validators.required),
-    valeurAppel: new FormControl('', Validators.required),
-    modeAppel: new FormControl('', Validators.required),
-    volumeMega: new FormControl('', Validators.required),
-    nbSms: new FormControl('', Validators.required)
+ forfaitForm = new FormGroup({
+   typeForfait: new FormControl('', Validators.required),
+   nomForfait: new FormControl('', Validators.required),
+   prixForfait: new FormControl('', Validators.required),
+   dureeForfait: new FormControl('', Validators.required),
+   valeurAppel: new FormControl('', Validators.required),
+   modeAppel: new FormControl('', Validators.required),
+   volumeMega: new FormControl('', Validators.required),
+   nbSms: new FormControl('', Validators.required)
   });
+
+ consoForm = new FormGroup({
+    valeurAppel: new FormControl('1', Validators.required),
+    valeurAutre: new FormControl('3', Validators.required)
+  });
+  message: string;
+  error_message: string;
+
 
   get appel(): any {
     return this.forfaitForm.get('valeurAppel');
@@ -79,6 +83,11 @@ forfaitForm = new FormGroup({
     console.log('FORFAIT :', this.forfaitForm.value);
     this.insertForfait();
   }
+
+  onConsoSubmit(): void {
+    console.log('CONSO :',this.consoForm.value);
+    this.insertConso();
+  }
   constructor(private ForfaitServices: ForfaitService) { }
 
   ngOnInit(): void {
@@ -96,6 +105,22 @@ forfaitForm = new FormGroup({
      this.message = 'Erreur interne';
     };
      this.ForfaitServices.getInsertionForfait(this.forfaitForm.value).subscribe(onSuccess, onError);
+     alert('Succes Confirmation');
+  }
+
+  insertConso(){
+     const onSuccess = response => {
+       if (response.status === 200) {
+        this.message = 'Succes Confirmation';
+      } else {
+        this.error_message = 'Erreur Confirmation';
+      }
+    };
+
+     const onError = error => {
+     this.message = 'Erreur interne';
+    };
+     this.ForfaitServices.insertConso(this.consoForm.value).subscribe(onSuccess, onError);
      alert('Succes Confirmation');
   }
 

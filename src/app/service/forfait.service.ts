@@ -22,4 +22,11 @@ export class ForfaitService {
     return this.http.get(`${url}forfait/getVenteForfait`);
   }
 
+  insertConso(Insertion) {
+    const options = this.toolsServ.formOption();
+    const za = this.http.post(`${url}forfait/addConsommation`, Insertion, options);
+    console.log(Insertion);
+    return za;
+ }
+
 }
