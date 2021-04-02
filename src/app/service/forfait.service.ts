@@ -18,6 +18,9 @@ export class ForfaitService {
      console.log(Insertion);
      return za;
   }
+  statistic(){
+    return this.http.get(`${url}forfait/getVenteForfait`);
+  }
 
   insertConso(Insertion) {
     const options = this.toolsServ.formOption();
