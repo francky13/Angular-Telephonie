@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {url} from '../../environments/environment';
+import {url} from 'src/environments/environment';
 import { ToolsService } from './tools.service';
 
 
